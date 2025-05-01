@@ -15,6 +15,11 @@ clear; clc; close all;
 
 % Ask for number of polygon vertices
 n = input('How many vertices does you polygon have?');
+if n <3
+    error('That is not a triangle or rectangle')
+elseif n>4
+    error('That is not a triangle or rectangle')
+end
 
 % Preallocate values to fill with user input
 x = zeros(1,n);
