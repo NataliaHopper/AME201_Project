@@ -1,0 +1,55 @@
+%{
+AME 201
+Statics Final Project
+Natalia Hopper, nhopper@usc.edu
+Joanna Myint, jmyint@usc.edu
+
+History:
+Date            Programmer          Changes
+--------------------------------------------------------
+04/30/2025      Natalia Hopper      Original
+04/30/2025      Joanna Myint        Added triangle part
+%}
+
+clear; clc; close all;
+if userInput == 3
+    % Triangle is a Right Triangle
+    % calculate the centroid of the triangle
+    % define the max and min coordinates
+
+    xMax = max(x(i));
+    xMin = min(x(i));
+
+    yMax = max(y(i));
+    yMin = min(y(i));
+
+    % define the base and height
+    b = xMax - xMin;
+    h = yMax - yMin;
+
+    % define two types of right triangles:
+    % one with right angle on the left and the other on the right
+
+    xSum = sum(x(i));
+
+    % case 1: right angle on the left (2*xMin + xMax)
+    if xSum == 2 * xMin + xMax
+        xBarTriangle = b / 3;
+        yBarTriangle = h / 3;
+        fprintf('The Centroid of the Right Triangle is (%.2f, %.2f)\n', xBarTriangle, yBarTriangle);
+
+    % case 2: right angle on the right (xMin + 2*xMax)
+    elseif xSum == xMin + 2 * xMax
+        xBarTriangle = (2 / 3) * b;
+        yBarTriangle = h / 3;
+        fprintf('The Centroid of the Right Triangle is (%.2f, %.2f)\n', xBarTriangle, yBarTriangle);
+
+    end
+
+    % calculate MOI of triangle
+    moixTriangle = (1 / 12) * b * h^3;
+    moiyTriangle = (1 / 36) * b^3 * h; 
+
+    fprintf('Ix = %.2f\n', moixTriangle);
+    fprintf('Iy = %.2f\n', moiyTriangle);
+end
