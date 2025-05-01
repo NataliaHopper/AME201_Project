@@ -7,8 +7,8 @@ Joanna Myint, ____@usc.edu
 History:
 Date            Programmer          Changes
 --------------------------------------------------------
-04/30/2025      Natalia Hopper      Original
-
+04/30/2025      Natalia Hopper      Polygon grapher, rectangle calculations
+04/30/2025      Joanna Myint        Triangle calculations
 %}
 
 clear; clc; close all;
